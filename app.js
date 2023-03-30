@@ -17,7 +17,7 @@ const app = express();
 // app.use(bodyParser.urlencoded());  ////this is for handling forms
 app.use(express.json());  //this is for handling jsons
 app.use(bodyParser.json({extended:false}))
-app.use(express.static(path.join(__dirname, "public")));
+// app.use(express.static(path.join(__dirname, "public")));
 
 const accessLogStream = fs.createWriteStream('access.log', {flags: 'a'})
 
@@ -45,6 +45,13 @@ app.use('/purchase', purchaseRoutes);
 app.use('/premium', premiumFeatureRoutes);
 app.use('/password', resetPasswordRoutes);
 
+
+app.use((req, res) => {
+
+    console.log('urlll', req.url);
+    res.sendFile(path.join(__dirname, `public/${req.url}`));
+})
+    
 
 User.hasMany(Expense);
 Expense.belongsTo(User);

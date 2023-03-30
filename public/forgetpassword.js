@@ -10,7 +10,7 @@ async function sendpassword(e){
 
         console.log(passwordRecoveryDetails);
 
-        await axios.post('http://localhost:3000/password/forgotpassword',passwordRecoveryDetails)
+        await axios.post('34.207.85.190:3000/password/forgotpassword',passwordRecoveryDetails)
         .then((Response)=>{
             if(Response.status === 202){
               alert('check your Mail')

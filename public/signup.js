@@ -15,7 +15,7 @@ async function signup(e){
             console.log(userDetails)
         
 
-            const response = await axios.post("http://localhost:3000/user/signup",userDetails)
+            const response = await axios.post("34.207.85.190:3000/user/signup",userDetails)
             
             if(response.status === 201){
                 console.log(response.status);

@@ -11,7 +11,7 @@ async function login(event){
 
         console.log(loginDetails);
 
-        const response = await axios.post("http://localhost:3000/user/login",loginDetails)
+        const response = await axios.post("34.207.85.190:3000/user/login",loginDetails)
 
             console.log(response)
             if(response.status === 201){
